@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { newsList } from "@api/news";
 
-export function News() {
+export function News({ list = [] }: any) {
   return (
     <div>
       <h1>News list</h1>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {newsList.map((item, index) => (
+        {list.map((item, index) => (
           <Card {...item} key={index} />
         ))}
       </div>

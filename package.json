@@ -17,5 +17,9 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "effector": "^20.17.0",
+    "effector-react": "^20.8.0"
   }
 }
