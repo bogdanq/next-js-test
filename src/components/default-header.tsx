@@ -1,20 +1,21 @@
-import Link from "next/link";
+import styles from "./example.module.css";
+// поддержка css-modules
 import { ActiveLink } from "./active-link";
 
 export function DefaultHeader() {
   return (
-    <div style={s}>
+    <div className={styles.container}>
       <ActiveLink href="/">
         <a>Home</a>
       </ActiveLink>
       <ActiveLink href="/news">
         <a>News</a>
       </ActiveLink>
-      <ActiveLink href="/login">
-        <a>login</a>
+      <ActiveLink href="/pre-render">
+        <a>pre-render</a>
       </ActiveLink>
-      <ActiveLink href="/registration">
-        <a>registration</a>
+      <ActiveLink href="/server-side-render">
+        <a>server-side-render</a>
       </ActiveLink>
       <ActiveLink href="/gh-info">
         <a>GhInfo</a>
@@ -22,11 +23,3 @@ export function DefaultHeader() {
     </div>
   );
 }
-
-const s = {
-  display: "flex",
-  justifyContent: "space-around",
-  border: "1px solid #000",
-  height: 100,
-  alignItems: "center",
-};

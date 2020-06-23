@@ -24,6 +24,7 @@
     "effector": "^20.17.0",
     "effector-next": "1.2.0",
     "effector-react": "^20.8.0",
+    "fs": "0.0.1-security",
     "styled-components": "5.1.1"
   }
 }

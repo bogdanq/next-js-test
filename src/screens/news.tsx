@@ -2,12 +2,22 @@ import Link from "next/link";
 import { NewsList } from "@api/news";
 import styled from "styled-components";
 
-export function News({ list = [] }: { list: NewsList[] }) {
+export function News({
+  list = [],
+  pending,
+}: {
+  list: NewsList[];
+  pending: boolean;
+}) {
+  if (pending) {
+    return <h1>pending...</h1>;
+  }
+
   return (
     <>
       <h1>News list</h1>
       <Flex>
-        {(list || []).map((item, index) => (
+        {(list ?? []).map((item, index) => (
           <Card {...item} key={index} />
         ))}
       </Flex>

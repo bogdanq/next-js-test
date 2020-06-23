@@ -1,8 +1,19 @@
 import { useRouter } from "next/router";
+import { NewsList } from "@api/news";
 
-export function CurrentNews() {
+type Props = {
+  article?: NewsList;
+};
+
+export function CurrentNews({ article }: Props) {
   const router = useRouter();
   const { id } = router.query;
 
-  return <div>CurrentNews {id}</div>;
+  return (
+    <div>
+      <h1>CurrentNews {id}</h1>
+      <h2>{article?.title || "default title"}</h2>
+      <h2>{article?.description || "default description"}</h2>
+    </div>
+  );
 }

@@ -11,7 +11,9 @@ class MyDocument extends Document {
     return (
       <Html>
         {/* тут все стили, заголовки, метатеги */}
-        <Head />
+        <Head>
+          <link rel="icon" href="/svg/favicon.ico" />
+        </Head>
         <body>
           <Main />
           <NextScript />

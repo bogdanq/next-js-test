@@ -8,7 +8,19 @@ import { useStore } from "effector-react";
 import { News } from "../../screens";
 import { $news, getNewsList, $pending } from "./model";
 
+// внутри getInitialProps, выполняется только при сср
 const enhance = withStart(getNewsList as any);
+
+/*
+export async function getStaticProps() {
+  // вызывается всегда но с withStart не работает
+  return {
+    props: {
+      id: 12,
+    },
+  };
+}
+*/
 
 type Props = {
   list: NewsList[];
@@ -28,19 +40,16 @@ const Page: NextPage<Props> = () => {
     }
   }, [news]);
 
-  if (pending) {
-    return <h1>pending...</h1>;
-  }
-
   return (
     <>
       <Head>
         <title>News page title</title>
       </Head>
       <DefaultHeader />
-      <News list={news} />
+      <News list={news} pending={pending} />
     </>
   );
 };
 
+// export default Page;
 export default enhance(Page);
