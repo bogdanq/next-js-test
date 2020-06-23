@@ -16,6 +16,9 @@ export function DefaultHeader() {
       <ActiveLink href="/registration">
         <a>registration</a>
       </ActiveLink>
+      <ActiveLink href="/gh-info">
+        <a>GhInfo</a>
+      </ActiveLink>
     </div>
   );
 }
